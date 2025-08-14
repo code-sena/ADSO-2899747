@@ -6,7 +6,7 @@ Document each action including branch creation, commits, pushes, and merges, usi
 
 ---
 
-## 1. Initial Setup
+## 1. Initial
 
 Check current branch and fetch latest changes:
 
