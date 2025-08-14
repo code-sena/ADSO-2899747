@@ -1,10 +1,10 @@
-# MR Flow Between Environments - Git Exercise
+MR Flow Between Environments - Git Exercise
 
 ## Objective
 Simulate the flow of changes through environments: `project → dev → qa → main`.  
 Document each action including branch creation, commits, pushes, and merges, using Conventional Commits in English.
 
----
+
 
 ## 1. Initial
 
