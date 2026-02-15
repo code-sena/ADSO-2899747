@@ -53,7 +53,7 @@
       // Filter modules by search
       var search = document.getElementById('moduleSearch');
       if (search) {
-        var items = Array.prototype.slice.call(document.querySelectorAll('.modules-grid a.card'));
+        var items = Array.prototype.slice.call(document.querySelectorAll('.module-card'));
         search.addEventListener('input', function(){
           var q = (search.value || '').toLowerCase().trim();
           items.forEach(function(el){
@@ -67,44 +67,160 @@
 </head>
 <body>
 <header>
-  <h1>Flight Management System</h1>
+  <h1>✈️ Flight Management System</h1>
+  <p class="header-subtitle">Sistema Integral de Gestión Aeroportuaria</p>
 </header>
-<nav role="tablist" aria-label="Navegación de secciones">
-  <button role="tab" aria-controls="presentation" aria-selected="true" class="active" data-tab="presentation" onclick="openTab(event, 'presentation')">Presentación</button>
-  <button role="tab" aria-controls="diagrams" aria-selected="false" data-tab="diagrams" onclick="openTab(event, 'diagrams')">Diagramas</button>
-  <button role="tab" aria-controls="hu" aria-selected="false" data-tab="hu" onclick="openTab(event, 'hu')">Tablero HU</button>
-  <button role="tab" aria-controls="moscow" aria-selected="false" data-tab="moscow" onclick="openTab(event, 'moscow')">MoSCoW</button>
-  <button role="tab" aria-controls="phases" aria-selected="false" data-tab="phases" onclick="openTab(event, 'phases')">Fases & Estimación</button>
+<nav role="tablist" aria-label="Navegación principal" class="main-nav">
+  <button role="tab" aria-controls="presentation" aria-selected="true" class="active" data-tab="presentation" onclick="openTab(event, 'presentation')">
+    <span class="nav-icon">📋</span>
+    <span class="nav-text">Inicio</span>
+  </button>
+  <button role="tab" aria-controls="modules" aria-selected="false" data-tab="modules" onclick="openTab(event, 'modules')">
+    <span class="nav-icon">🧩</span>
+    <span class="nav-text">Módulos</span>
+  </button>
+  <button role="tab" aria-controls="diagrams" aria-selected="false" data-tab="diagrams" onclick="openTab(event, 'diagrams')">
+    <span class="nav-icon">📊</span>
+    <span class="nav-text">Diagramas</span>
+  </button>
+  <button role="tab" aria-controls="hu" aria-selected="false" data-tab="hu" onclick="openTab(event, 'hu')">
+    <span class="nav-icon">📝</span>
+    <span class="nav-text">HU</span>
+  </button>
+  <button role="tab" aria-controls="moscow" aria-selected="false" data-tab="moscow" onclick="openTab(event, 'moscow')">
+    <span class="nav-icon">🎯</span>
+    <span class="nav-text">MoSCoW</span>
+  </button>
+  <button role="tab" aria-controls="phases" aria-selected="false" data-tab="phases" onclick="openTab(event, 'phases')">
+    <span class="nav-icon">📅</span>
+    <span class="nav-text">Fases</span>
+  </button>
 </nav>
-<div class="module-nav" aria-label="Módulos del sistema">
-  <a href="geolocation/geolocation.html" class="nav-link">Geolocation</a>
-  <a href="infrastructure/infrastructure.html" class="nav-link">Infrastructure</a>
-  <a href="parameterization/parameterization.html" class="nav-link">Parameterization</a>
-  <a href="security/security.html" class="nav-link">Security</a>
-  <a href="human_resources/human_resources.html" class="nav-link">Human Resources</a>
-  <a href="aircraft_management/aircraft_management.html" class="nav-link">Aircraft Management</a>
-  <a href="flight_operations/flight_operations.html" class="nav-link">Flight Operations</a>
-  <a href="passengers_services/passengers_services.html" class="nav-link">Passengers & Services</a>
-  <a href="notifications/notifications.html" class="nav-link">Notifications</a>
-</div>
 <section id="presentation" class="active">
-  <div class="card" style="margin-top: 8px;">
-    <h2 style="margin-top:0">Presentación del Proyecto</h2>
-    <p>Este sistema gestiona todas las operaciones relacionadas con vuelos: desde la definición de aeropuertos, aviones y tripulación hasta la venta de tiquetes y la notificación de eventos. Incluye módulos para geolocalización, infraestructura, parametrización, seguridad, recursos humanos, gestión de aeronaves, operaciones de vuelo, servicios al pasajero y notificaciones.</p>
-    <div class="searchbar">
-      <input id="moduleSearch" type="search" placeholder="Buscar módulo por nombre..." aria-label="Buscar módulo">
+  <div class="hero-section">
+    <h2 class="hero-title">Sistema de Gestión de Vuelos</h2>
+    <p class="hero-description">Plataforma integral para la gestión de operaciones aeroportuarias, desde la administración de infraestructura hasta la atención al pasajero.</p>
+    
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">9</div>
+        <div class="stat-label">Módulos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">35+</div>
+        <div class="stat-label">Entidades</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Diagramas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Fases</div>
+      </div>
     </div>
-    <div class="modules-grid">
-      <a href='geolocation/geolocation.html' class="card">Geolocation</a>
-      <a href='infrastructure/infrastructure.html' class="card">Infrastructure</a>
-      <a href='parameterization/parameterization.html' class="card">Parameterization</a>
-      <a href='security/security.html' class="card">Security</a>
-      <a href='human_resources/human_resources.html' class="card">Human Resources</a>
-      <a href='aircraft_management/aircraft_management.html' class="card">Aircraft Management</a>
-      <a href='flight_operations/flight_operations.html' class="card">Flight Operations</a>
-      <a href='passengers_services/passengers_services.html' class="card">Passengers & Services</a>
-      <a href='notifications/notifications.html' class="card">Notifications</a>
+  </div>
+
+  <div class="card features-section">
+    <h3>🎯 Características Principales</h3>
+    <div class="features-list">
+      <div class="feature-item">
+        <span class="feature-icon">🌍</span>
+        <div>
+          <strong>Geolocalización Global</strong>
+          <p>Gestión de ubicaciones desde continentes hasta ciudades</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🏢</span>
+        <div>
+          <strong>Infraestructura</strong>
+          <p>Administración de aeropuertos, terminales y puertas de embarque</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🔐</span>
+        <div>
+          <strong>Seguridad Avanzada</strong>
+          <p>Control de acceso, roles, permisos y auditoría completa</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">✈️</span>
+        <div>
+          <strong>Gestión de Aeronaves</strong>
+          <p>Control de flota, mantenimiento y ciclos de vida</p>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<section id="modules">
+  <div class="modules-header">
+    <h2>🧩 Módulos del Sistema</h2>
+    <p>Explora los diferentes módulos que componen el sistema de gestión de vuelos</p>
+  </div>
+  
+  <div class="searchbar">
+    <input id="moduleSearch" type="search" placeholder="🔍 Buscar módulo por nombre..." aria-label="Buscar módulo">
+  </div>
+  
+  <div class="modules-grid">
+    <a href='geolocation/geolocation.html' class="module-card" data-module="geolocation">
+      <div class="module-icon">🌍</div>
+      <h3 class="module-title">Geolocation</h3>
+      <p class="module-desc">Gestión de ubicaciones geográficas</p>
+      <span class="module-entities">4 entidades</span>
+    </a>
+    <a href='infrastructure/infrastructure.html' class="module-card" data-module="infrastructure">
+      <div class="module-icon">🏢</div>
+      <h3 class="module-title">Infrastructure</h3>
+      <p class="module-desc">Aeropuertos y terminales</p>
+      <span class="module-entities">3 entidades</span>
+    </a>
+    <a href='parameterization/parameterization.html' class="module-card" data-module="parameterization">
+      <div class="module-icon">⚙️</div>
+      <h3 class="module-title">Parameterization</h3>
+      <p class="module-desc">Configuración del sistema</p>
+      <span class="module-entities">5 entidades</span>
+    </a>
+    <a href='security/security.html' class="module-card" data-module="security">
+      <div class="module-icon">🔐</div>
+      <h3 class="module-title">Security</h3>
+      <p class="module-desc">Autenticación y permisos</p>
+      <span class="module-entities">15 entidades</span>
+    </a>
+    <a href='human_resources/human_resources.html' class="module-card" data-module="hr">
+      <div class="module-icon">👥</div>
+      <h3 class="module-title">Human Resources</h3>
+      <p class="module-desc">Gestión de empleados</p>
+      <span class="module-entities">10 entidades</span>
+    </a>
+    <a href='aircraft_management/aircraft_management.html' class="module-card" data-module="aircraft">
+      <div class="module-icon">✈️</div>
+      <h3 class="module-title">Aircraft Management</h3>
+      <p class="module-desc">Control de aeronaves</p>
+      <span class="module-entities">10 entidades</span>
+    </a>
+    <a href='flight_operations/flight_operations.html' class="module-card" data-module="flights">
+      <div class="module-icon">🛫</div>
+      <h3 class="module-title">Flight Operations</h3>
+      <p class="module-desc">Operaciones de vuelos</p>
+      <span class="module-entities">4 entidades</span>
+    </a>
+    <a href='passengers_services/passengers_services.html' class="module-card" data-module="passengers">
+      <div class="module-icon">🎫</div>
+      <h3 class="module-title">Passengers & Services</h3>
+      <p class="module-desc">Servicios al pasajero</p>
+      <span class="module-entities">1 entidad</span>
+    </a>
+    <a href='notifications/notifications.html' class="module-card" data-module="notifications">
+      <div class="module-icon">🔔</div>
+      <h3 class="module-title">Notifications</h3>
+      <p class="module-desc">Sistema de notificaciones</p>
+      <span class="module-entities">2 entidades</span>
+    </a>
   </div>
 </section>
 <section id="diagrams">
@@ -143,20 +259,46 @@ package &quot;Parameterization&quot; {
 
 package &quot;Security&quot; {
   class role
+  class permission
+  class role_permission
   class module
   class form
   class form_module
   class role_form
   class person
   class user_account
+  class session
+  class audit_log
+  class password_reset
+  class user_preference
+  class security_question
+  class user_security_answer
 }
 
 package &quot;Human Resources&quot; {
   class employee
+  class contract
+  class certification
+  class employee_certification
+  class training_program
+  class employee_training
+  class payroll
+  class attendance
+  class leave_request
+  class performance_review
 }
 
 package &quot;Aircraft Management&quot; {
   class aircraft
+  class aircraft_status
+  class aircraft_status_history
+  class maintenance_type
+  class maintenance_schedule
+  class maintenance_record
+  class aircraft_component
+  class component_installation
+  class fuel_log
+  class incident_report
 }
 
 package &quot;Flight Operations&quot; {
@@ -249,6 +391,16 @@ class role {
   + id
 }
 
+class permission {
+  + id
+}
+
+class role_permission {
+  + id
+  + role_id
+  + permission_id
+}
+
 class module {
   + id
 }
@@ -281,15 +433,141 @@ class user_account {
   + role_id
 }
 
+class session {
+  + id
+  + user_account_id
+}
+
+class audit_log {
+  + id
+  + user_account_id
+}
+
+class password_reset {
+  + id
+  + user_account_id
+}
+
+class user_preference {
+  + id
+  + user_account_id
+}
+
+class security_question {
+  + id
+}
+
+class user_security_answer {
+  + id
+  + user_account_id
+  + security_question_id
+}
+
 class employee {
   + id
   + person_id
   + crew_role_id
 }
 
+class contract {
+  + id
+  + employee_id
+}
+
+class certification {
+  + id
+}
+
+class employee_certification {
+  + id
+  + employee_id
+  + certification_id
+}
+
+class training_program {
+  + id
+}
+
+class employee_training {
+  + id
+  + employee_id
+  + training_program_id
+}
+
+class payroll {
+  + id
+  + employee_id
+}
+
+class attendance {
+  + id
+  + employee_id
+}
+
+class leave_request {
+  + id
+  + employee_id
+}
+
+class performance_review {
+  + id
+  + employee_id
+  + reviewer_id
+}
+
 class aircraft {
   + id
   + aircraft_type_id
+}
+
+class aircraft_status {
+  + id
+}
+
+class aircraft_status_history {
+  + id
+  + aircraft_id
+  + aircraft_status_id
+}
+
+class maintenance_type {
+  + id
+}
+
+class maintenance_schedule {
+  + id
+  + aircraft_id
+  + maintenance_type_id
+}
+
+class maintenance_record {
+  + id
+  + aircraft_id
+  + maintenance_type_id
+  + technician_id
+}
+
+class aircraft_component {
+  + id
+}
+
+class component_installation {
+  + id
+  + aircraft_id
+  + aircraft_component_id
+}
+
+class fuel_log {
+  + id
+  + aircraft_id
+  + airport_id
+  + flight_id
+}
+
+class incident_report {
+  + id
+  + aircraft_id
+  + flight_id
 }
 
 class flight {
@@ -353,8 +631,38 @@ flight &quot;1&quot; o-- &quot;many&quot; ticket
 ticket &quot;1&quot; *-- &quot;many&quot; baggage
 
 role &quot;1&quot; o-- &quot;many&quot; role_form
+role &quot;1&quot; o-- &quot;many&quot; role_permission
+permission &quot;1&quot; o-- &quot;many&quot; role_permission
 form &quot;1&quot; o-- &quot;many&quot; form_module
 module &quot;1&quot; o-- &quot;many&quot; form_module
+
+user_account &quot;1&quot; o-- &quot;many&quot; session
+user_account &quot;1&quot; o-- &quot;many&quot; audit_log
+user_account &quot;1&quot; o-- &quot;many&quot; password_reset
+user_account &quot;1&quot; o-- &quot;many&quot; user_preference
+user_account &quot;1&quot; o-- &quot;many&quot; user_security_answer
+security_question &quot;1&quot; o-- &quot;many&quot; user_security_answer
+
+employee &quot;1&quot; o-- &quot;many&quot; contract
+employee &quot;1&quot; o-- &quot;many&quot; employee_certification
+employee &quot;1&quot; o-- &quot;many&quot; employee_training
+employee &quot;1&quot; o-- &quot;many&quot; payroll
+employee &quot;1&quot; o-- &quot;many&quot; attendance
+employee &quot;1&quot; o-- &quot;many&quot; leave_request
+employee &quot;1&quot; o-- &quot;many&quot; performance_review
+certification &quot;1&quot; o-- &quot;many&quot; employee_certification
+training_program &quot;1&quot; o-- &quot;many&quot; employee_training
+
+aircraft &quot;1&quot; o-- &quot;many&quot; aircraft_status_history
+aircraft &quot;1&quot; o-- &quot;many&quot; maintenance_schedule
+aircraft &quot;1&quot; o-- &quot;many&quot; maintenance_record
+aircraft &quot;1&quot; o-- &quot;many&quot; component_installation
+aircraft &quot;1&quot; o-- &quot;many&quot; fuel_log
+aircraft &quot;1&quot; o-- &quot;many&quot; incident_report
+aircraft_status &quot;1&quot; o-- &quot;many&quot; aircraft_status_history
+maintenance_type &quot;1&quot; o-- &quot;many&quot; maintenance_schedule
+maintenance_type &quot;1&quot; o-- &quot;many&quot; maintenance_record
+aircraft_component &quot;1&quot; o-- &quot;many&quot; component_installation
 
 notification &quot;many&quot; --&gt; &quot;1&quot; person
 @enduml

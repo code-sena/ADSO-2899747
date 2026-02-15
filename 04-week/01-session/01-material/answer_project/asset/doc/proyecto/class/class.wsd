@@ -64,6 +64,16 @@ class role {
   + id
 }
 
+class permission {
+  + id
+}
+
+class role_permission {
+  + id
+  + role_id
+  + permission_id
+}
+
 class module {
   + id
 }
@@ -96,15 +106,141 @@ class user_account {
   + role_id
 }
 
+class session {
+  + id
+  + user_account_id
+}
+
+class audit_log {
+  + id
+  + user_account_id
+}
+
+class password_reset {
+  + id
+  + user_account_id
+}
+
+class user_preference {
+  + id
+  + user_account_id
+}
+
+class security_question {
+  + id
+}
+
+class user_security_answer {
+  + id
+  + user_account_id
+  + security_question_id
+}
+
 class employee {
   + id
   + person_id
   + crew_role_id
 }
 
+class contract {
+  + id
+  + employee_id
+}
+
+class certification {
+  + id
+}
+
+class employee_certification {
+  + id
+  + employee_id
+  + certification_id
+}
+
+class training_program {
+  + id
+}
+
+class employee_training {
+  + id
+  + employee_id
+  + training_program_id
+}
+
+class payroll {
+  + id
+  + employee_id
+}
+
+class attendance {
+  + id
+  + employee_id
+}
+
+class leave_request {
+  + id
+  + employee_id
+}
+
+class performance_review {
+  + id
+  + employee_id
+  + reviewer_id
+}
+
 class aircraft {
   + id
   + aircraft_type_id
+}
+
+class aircraft_status {
+  + id
+}
+
+class aircraft_status_history {
+  + id
+  + aircraft_id
+  + aircraft_status_id
+}
+
+class maintenance_type {
+  + id
+}
+
+class maintenance_schedule {
+  + id
+  + aircraft_id
+  + maintenance_type_id
+}
+
+class maintenance_record {
+  + id
+  + aircraft_id
+  + maintenance_type_id
+  + technician_id
+}
+
+class aircraft_component {
+  + id
+}
+
+class component_installation {
+  + id
+  + aircraft_id
+  + aircraft_component_id
+}
+
+class fuel_log {
+  + id
+  + aircraft_id
+  + airport_id
+  + flight_id
+}
+
+class incident_report {
+  + id
+  + aircraft_id
+  + flight_id
 }
 
 class flight {
@@ -168,8 +304,38 @@ flight "1" o-- "many" ticket
 ticket "1" *-- "many" baggage
 
 role "1" o-- "many" role_form
+role "1" o-- "many" role_permission
+permission "1" o-- "many" role_permission
 form "1" o-- "many" form_module
 module "1" o-- "many" form_module
+
+user_account "1" o-- "many" session
+user_account "1" o-- "many" audit_log
+user_account "1" o-- "many" password_reset
+user_account "1" o-- "many" user_preference
+user_account "1" o-- "many" user_security_answer
+security_question "1" o-- "many" user_security_answer
+
+employee "1" o-- "many" contract
+employee "1" o-- "many" employee_certification
+employee "1" o-- "many" employee_training
+employee "1" o-- "many" payroll
+employee "1" o-- "many" attendance
+employee "1" o-- "many" leave_request
+employee "1" o-- "many" performance_review
+certification "1" o-- "many" employee_certification
+training_program "1" o-- "many" employee_training
+
+aircraft "1" o-- "many" aircraft_status_history
+aircraft "1" o-- "many" maintenance_schedule
+aircraft "1" o-- "many" maintenance_record
+aircraft "1" o-- "many" component_installation
+aircraft "1" o-- "many" fuel_log
+aircraft "1" o-- "many" incident_report
+aircraft_status "1" o-- "many" aircraft_status_history
+maintenance_type "1" o-- "many" maintenance_schedule
+maintenance_type "1" o-- "many" maintenance_record
+aircraft_component "1" o-- "many" component_installation
 
 notification "many" --> "1" person
 @enduml

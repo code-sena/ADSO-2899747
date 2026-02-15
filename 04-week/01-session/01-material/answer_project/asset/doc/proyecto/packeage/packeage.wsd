@@ -24,20 +24,46 @@ package "Parameterization" {
 
 package "Security" {
   class role
+  class permission
+  class role_permission
   class module
   class form
   class form_module
   class role_form
   class person
   class user_account
+  class session
+  class audit_log
+  class password_reset
+  class user_preference
+  class security_question
+  class user_security_answer
 }
 
 package "Human Resources" {
   class employee
+  class contract
+  class certification
+  class employee_certification
+  class training_program
+  class employee_training
+  class payroll
+  class attendance
+  class leave_request
+  class performance_review
 }
 
 package "Aircraft Management" {
   class aircraft
+  class aircraft_status
+  class aircraft_status_history
+  class maintenance_type
+  class maintenance_schedule
+  class maintenance_record
+  class aircraft_component
+  class component_installation
+  class fuel_log
+  class incident_report
 }
 
 package "Flight Operations" {

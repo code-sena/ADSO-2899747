@@ -25,12 +25,21 @@
 </nav>
 <main>
   <div class="card">
-    <p>Handles employee data and integrates with crew management.</p>
-    <h2>Entities</h2>
+    <p>Handles employee data, contracts, certifications, training, payroll, attendance, leave requests and performance reviews.</p>
+    <h2>Entities (10)</h2>
     <table>
       <thead><tr><th>Entity</th><th>Attributes</th></tr></thead>
       <tbody>
-      <tr><td><strong>employee</strong></td><td>id, salary, hire_date, crew_role_id, person_id</td></tr>
+      <tr><td><strong>employee</strong></td><td>id, employee_number, salary, hire_date, termination_date, crew_role_id, person_id</td></tr>
+      <tr><td><strong>contract</strong></td><td>id, contract_number, contract_type, start_date, end_date, salary_amount, terms, employee_id</td></tr>
+      <tr><td><strong>certification</strong></td><td>id, code, name, description, issuing_authority, validity_period_months</td></tr>
+      <tr><td><strong>employee_certification</strong></td><td>id, employee_id, certification_id, issue_date, expiry_date, certificate_number</td></tr>
+      <tr><td><strong>training_program</strong></td><td>id, code, name, description, duration_hours, max_participants</td></tr>
+      <tr><td><strong>employee_training</strong></td><td>id, employee_id, training_program_id, enrollment_date, completion_date, score, instructor_name</td></tr>
+      <tr><td><strong>payroll</strong></td><td>id, employee_id, period_start, period_end, base_salary, bonuses, deductions, net_salary, payment_date</td></tr>
+      <tr><td><strong>attendance</strong></td><td>id, employee_id, date, check_in_time, check_out_time, hours_worked, attendance_type</td></tr>
+      <tr><td><strong>leave_request</strong></td><td>id, employee_id, leave_type, start_date, end_date, reason, status, approved_by, approved_at</td></tr>
+      <tr><td><strong>performance_review</strong></td><td>id, employee_id, review_date, reviewer_id, rating, comments, next_review_date</td></tr>
       </tbody>
     </table>
   </div>

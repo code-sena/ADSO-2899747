@@ -25,12 +25,21 @@
 </nav>
 <main>
   <div class="card">
-    <p>Stores information about aircrafts and their usage.</p>
-    <h2>Entities</h2>
+    <p>Stores information about aircrafts, maintenance schedules, components, fuel logs, incidents and complete aircraft lifecycle management.</p>
+    <h2>Entities (10)</h2>
     <table>
       <thead><tr><th>Entity</th><th>Attributes</th></tr></thead>
       <tbody>
-      <tr><td><strong>aircraft</strong></td><td>id, manufacturer, registration_code, hours_in_use, aircraft_type_id</td></tr>
+      <tr><td><strong>aircraft</strong></td><td>id, manufacturer, model, registration_code, serial_number, manufacturing_date, acquisition_date, hours_in_use, cycles_completed, capacity, aircraft_type_id</td></tr>
+      <tr><td><strong>aircraft_status</strong></td><td>id, code, name, description</td></tr>
+      <tr><td><strong>aircraft_status_history</strong></td><td>id, aircraft_id, aircraft_status_id, change_date, reason, changed_by</td></tr>
+      <tr><td><strong>maintenance_type</strong></td><td>id, code, name, description, frequency_hours, frequency_cycles</td></tr>
+      <tr><td><strong>maintenance_schedule</strong></td><td>id, aircraft_id, maintenance_type_id, scheduled_date, due_hours, due_cycles, status</td></tr>
+      <tr><td><strong>maintenance_record</strong></td><td>id, aircraft_id, maintenance_type_id, maintenance_date, technician_id, hours_at_maintenance, cycles_at_maintenance, findings, actions_taken, next_due_hours, next_due_cycles</td></tr>
+      <tr><td><strong>aircraft_component</strong></td><td>id, code, name, description, part_number, manufacturer</td></tr>
+      <tr><td><strong>component_installation</strong></td><td>id, aircraft_id, aircraft_component_id, installation_date, removal_date, hours_at_installation, cycles_at_installation, serial_number, location</td></tr>
+      <tr><td><strong>fuel_log</strong></td><td>id, aircraft_id, refuel_date, quantity_liters, fuel_type, cost, airport_id, flight_id</td></tr>
+      <tr><td><strong>incident_report</strong></td><td>id, aircraft_id, flight_id, incident_date, incident_type, severity, description, reported_by, resolution, resolved_at</td></tr>
       </tbody>
     </table>
   </div>

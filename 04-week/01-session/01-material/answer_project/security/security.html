@@ -25,18 +25,26 @@
 </nav>
 <main>
   <div class="card">
-    <p>Manages authentication, authorization and user-related data.</p>
-    <h2>Entities</h2>
+    <p>Manages authentication, authorization, user-related data, sessions, audit logs and security features.</p>
+    <h2>Entities (15)</h2>
     <table>
       <thead><tr><th>Entity</th><th>Attributes</th></tr></thead>
       <tbody>
       <tr><td><strong>role</strong></td><td>id, name, description</td></tr>
+      <tr><td><strong>permission</strong></td><td>id, code, name, description, resource</td></tr>
+      <tr><td><strong>role_permission</strong></td><td>id, role_id, permission_id, can_create, can_read, can_update, can_delete</td></tr>
       <tr><td><strong>module</strong></td><td>id, name, color, icon, path</td></tr>
       <tr><td><strong>form</strong></td><td>id, name, color, icon, path, section</td></tr>
       <tr><td><strong>form_module</strong></td><td>id, form_id, module_id</td></tr>
       <tr><td><strong>role_form</strong></td><td>id, role_id, form_id</td></tr>
       <tr><td><strong>person</strong></td><td>id, first_name, last_name, document_number, birth_date, gender, phone, email, address, attendant_name, attending_phone, document_type_id, city_id</td></tr>
-      <tr><td><strong>user_account</strong></td><td>id, username, password_hash, person_id, role_id</td></tr>
+      <tr><td><strong>user_account</strong></td><td>id, username, password_hash, person_id, role_id, is_active, last_login, email_verified, two_factor_enabled</td></tr>
+      <tr><td><strong>session</strong></td><td>id, user_account_id, token, ip_address, user_agent, login_at, logout_at, expires_at</td></tr>
+      <tr><td><strong>audit_log</strong></td><td>id, user_account_id, action, table_name, record_id, old_values, new_values, ip_address</td></tr>
+      <tr><td><strong>password_reset</strong></td><td>id, user_account_id, token, requested_at, expires_at, used_at</td></tr>
+      <tr><td><strong>user_preference</strong></td><td>id, user_account_id, theme, language, timezone, notifications_enabled</td></tr>
+      <tr><td><strong>security_question</strong></td><td>id, code, question_text</td></tr>
+      <tr><td><strong>user_security_answer</strong></td><td>id, user_account_id, security_question_id, answer_hash</td></tr>
       </tbody>
     </table>
   </div>
