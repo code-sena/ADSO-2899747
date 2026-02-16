@@ -1,0 +1,24 @@
+\appendix
+\section{Descripción detallada de componentes del sistema SGH}
+Aplicación web (Next.js + Tailwind CSS): Interfaz principal para gestión, con páginas modulares y componentes reutilizables. Consume APIs REST para datos dinámicos.
+
+Backend (Spring Boot): Arquitectura modular con controladores, servicios y repositorios. Maneja lógica de negocio y persistencia.
+
+Aplicación móvil (React Native): Extensión móvil con navegación y sincronización.
+
+Base de datos (MySQL): Esquema relacional para entidades académicas, con índices para rendimiento.
+
+APIs REST: Endpoints documentados para interoperabilidad.
+
+\section{Ejemplo de endpoint REST}
+Ejemplo de petición POST para crear un curso:
+\begin{verbatim}
+POST /courses
+Content-Type: application/json
+Authorization: Bearer <token>
+{
+  "courseName": "1A",
+  "gradeDirectorId": 123
+}
+\end{verbatim}
+Respuesta: 200 OK con cuerpo \{"status": "OK", "message": "Curso creado correctamente"\}.

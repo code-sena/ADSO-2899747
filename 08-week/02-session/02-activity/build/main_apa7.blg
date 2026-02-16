@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[1] Config.pm:310> INFO - Logfile is 'build/main_apa7.blg'
+[223] biber-MSWIN64:340> INFO - === 
+[308] Biber.pm:419> INFO - Reading 'build/main_apa7.bcf'
+[577] Biber.pm:979> INFO - Found 9 citekeys in bib section 0
+[637] Biber.pm:4419> INFO - Processing section 0
+[690] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography/references.bib' for section 0
+[836] bibtex.pm:1713> INFO - LaTeX decoding ...
+[858] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography/references.bib'
+[1010] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1037] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1038] Biber.pm:4239> INFO - Sorting list 'apa/apasortcite//global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[1089] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1090] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1091] Biber.pm:4239> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[1112] bbl.pm:660> INFO - Writing 'build/main_apa7.bbl' with encoding 'UTF-8'
+[1132] bbl.pm:763> INFO - Output to build/main_apa7.bbl

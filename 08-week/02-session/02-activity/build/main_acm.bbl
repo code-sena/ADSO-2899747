@@ -1,0 +1,132 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{9}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[des(2025)]%
+        {desarrollo2025}
+ \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Desarrollo de un sistema de seguimiento de
+  aplicaciones móviles basado en la nube para funciones de distribución
+  logística de salida}.
+\newblock \bibinfo{journal}{\emph{Journal of Logistics Technology}}
+  \bibinfo{volume}{15}, \bibinfo{number}{3} (\bibinfo{year}{2025}),
+  \bibinfo{pages}{50--60}.
+\newblock
+
+
+\bibitem[Amodeo(2013)]%
+        {amodeo2013}
+\bibfield{author}{\bibinfo{person}{E. Amodeo}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Principios de diseño de APIs REST}}.
+\newblock \bibinfo{publisher}{Leanpub}.
+\newblock
+
+
+\bibitem[Forsgren et~al\mbox{.}(2018)]%
+        {forsgren2018accelerate}
+\bibfield{author}{\bibinfo{person}{Nicole Forsgren}, \bibinfo{person}{Jez
+  Humble}, {and} \bibinfo{person}{Gene Kim}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Accelerate: The Science of Lean Software
+  and DevOps: Building and Scaling High Performing Technology Organizations}}.
+\newblock \bibinfo{publisher}{IT Revolution Press}.
+\newblock
+
+
+\bibitem[Lazuardy and Anggraini(2022)]%
+        {lazuardy2022}
+\bibfield{author}{\bibinfo{person}{M.~F.~S. Lazuardy} {and} \bibinfo{person}{D.
+  Anggraini}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Modern Front End Web Architectures with React.Js
+  and Next.Js}.
+\newblock \bibinfo{journal}{\emph{International Research Journal of Advanced
+  Engineering and Science}} \bibinfo{volume}{7}, \bibinfo{number}{1}
+  (\bibinfo{year}{2022}), \bibinfo{pages}{132--141}.
+\newblock
+
+
+\bibitem[Macías~Vera(2021)]%
+        {macias2021}
+\bibfield{author}{\bibinfo{person}{E.~V. Macías~Vera}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Estudio comparativo de los frameworks del
+  desarrollo móvil "Flutter" y "React Native"}}.
+\newblock \bibinfo{publisher}{Repositorio Nacional CEDIA}.
+\newblock
+
+
+\bibitem[REACT(2021)]%
+        {react2021}
+\bibfield{author}{\bibinfo{person}{REACT}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Rastreo de contactos en tiempo real y monitoreo de
+  riesgos mediante rastreo móvil con privacidad mejorada}.
+\newblock \bibinfo{journal}{\emph{IEEE Xplore}} (\bibinfo{year}{2021}).
+\newblock
+
+
+\bibitem[Somi(2021)]%
+        {somi2021}
+\bibfield{author}{\bibinfo{person}{M. Somi}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{User Interface Development of a Modern Web
+  Application}}.
+\newblock
+\newblock
+\shownote{[Tesis]}.
+
+
+\bibitem[Torres-Berru et~al\mbox{.}(2020)]%
+        {torres2020}
+\bibfield{author}{\bibinfo{person}{Y. Torres-Berru} {et~al\mbox{.}}}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Migración de un monolito a una arquitectura basada
+  en microservicios}.
+\newblock \bibinfo{journal}{\emph{Dominio de las Ciencias}}
+  \bibinfo{volume}{6}, \bibinfo{number}{2} (\bibinfo{year}{2020}),
+  \bibinfo{pages}{763--781}.
+\newblock
+
+
+\bibitem[Ye(2022)]%
+        {ye2022}
+\bibfield{author}{\bibinfo{person}{X.~P. Ye}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Diseño e implantación de un sistema de
+  autenticación multiplataforma para React y React Native}}.
+\newblock \bibinfo{publisher}{Universidad Politécnica de Madrid}.
+\newblock
+
+
+\end{thebibliography}

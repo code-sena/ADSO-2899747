@@ -1,0 +1,42 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[htbp]
+\centering
+\caption{Tecnologías Utilizadas en SGH}
+\label{tab:frameworks}
+\footnotesize
+\begin{tabular}{lccp{4cm}}
+\toprule
+\textbf{Tecnología} & \textbf{Lenguaje} & \textbf{Uso} & \textbf{Ventajas} \\
+\midrule
+Spring Boot & Java & Backend & Alta escalabilidad, seguridad robusta \\
+Next.js & JS/TS & Frontend Web & Rendimiento optimizado, SSR \\
+React Native & JavaScript & Móvil & Desarrollo cross-platform \\
+MySQL & SQL & BD & Integridad de datos, relaciones complejas \\
+\bottomrule
+\end{tabular}
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[h]
+\centering
+\caption{Resultados de rendimiento del sistema SGH}
+\label{tab:resultados}
+\begin{tabular}{|l|c|c|}
+\hline
+Componente & Métrica & Valor \\
+\hline
+Aplicación web & Tiempo de carga & <1.5s \\
+\hline
+Backend & Solicitudes/minuto & 500 \\
+\hline
+APIs REST & Endpoints & 15+ \\
+\hline
+Generación de horarios & Tiempo & <5s \\
+\hline
+Aplicación móvil & Compatibilidad & Android \\
+\hline
+\end{tabular}
+\end{table*}

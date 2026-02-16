@@ -1,0 +1,38 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[h]
+\centering
+\includegraphics[width=0.8\columnwidth]{graphics/uno.png}
+\caption{Modern Front End Web Architectures with React.Js and Next.Js.}
+\label{fig:lazuardy}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[h]
+\centering
+\includegraphics[width=0.8\columnwidth]{graphics/dos.png}
+\caption{User Interface Development of a Modern Web Application.}
+\label{fig:somi}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[h]
+\centering
+\includegraphics[width=0.8\columnwidth]{graphics/tres.png}
+\caption{Principios de diseño de APIs REST.}
+\label{fig:amodeo}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[h]
+\centering
+\includegraphics[width=0.8\columnwidth]{graphics/cuatro.png}
+\caption{Estudio comparativo de los frameworks del desarrollo móvil.}
+\label{fig:macias}
+\end{figure*}

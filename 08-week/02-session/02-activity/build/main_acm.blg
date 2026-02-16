@@ -1,0 +1,73 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: build/main_acm.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+The style file: ACM-Reference-Format.bst
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Database file #1: bibliography/references.bib
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Warning--no key, author, or editor in desarrollo2025
+Warning--no author, editor, organization, or key in desarrollo2025
+Warning--to sort, need author, editor, or key in desarrollo2025
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Warning--no key, author, or editor in desarrollo2025
+Warning--no key, author, or editor in desarrollo2025
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Warning--no key, author, or editor in desarrollo2025
+Warning--neither author and editor supplied for desarrollo2025
+Warning--empty address in amodeo2013
+Warning--empty address in forsgren2018accelerate
+Warning--empty address in macias2021
+Warning--no number and no volume in react2021
+Warning--page numbers missing in both pages and numpages fields in react2021
+Warning--empty publisher in somi2021
+Warning--empty address in somi2021
+Warning--empty address in ye2022
+You've used 9 entries,
+            6273 wiz_defined-function locations,
+            1561 strings with 19446 characters,
+and the built_in function-call counts, 8170 in all, are:
+= -- 1075
+> -- 178
+< -- 0
++ -- 53
+- -- 72
+* -- 494
+:= -- 778
+add.period$ -- 49
+call.type$ -- 9
+change.case$ -- 47
+chr.to.int$ -- 9
+cite$ -- 28
+duplicate$ -- 769
+empty$ -- 550
+format.name$ -- 80
+if$ -- 2027
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 26
+newline$ -- 112
+num.names$ -- 56
+pop$ -- 311
+preamble$ -- 1
+purify$ -- 119
+quote$ -- 0
+skip$ -- 261
+stack$ -- 0
+substring$ -- 577
+swap$ -- 67
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 139
+warning$ -- 15
+while$ -- 58
+width$ -- 0
+write$ -- 207
+(There were 15 warnings)

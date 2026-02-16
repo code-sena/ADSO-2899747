@@ -1,0 +1,58 @@
+\section{Marco teórico}
+\subsection{Sistemas de Gestión de Horarios Académicos}
+Un sistema de gestión de horarios académicos es una herramienta esencial en instituciones educativas, diseñada para optimizar la asignación de recursos limitados como profesores, aulas y horarios de clases. Estos sistemas integran datos heterogéneos, incluyendo la disponibilidad de profesores, restricciones curriculares, capacidades de aulas y preferencias de estudiantes, aplicando algoritmos de optimización combinatoria para resolver conflictos y generar horarios viables.
+
+En la literatura, se destacan casos de éxito en educación superior donde plataformas automatizadas han reducido significativamente el tiempo de planificación manual, permitiendo a los administradores enfocarse en tareas pedagógicas \cite{desarrollo2025}. Por ejemplo, en entornos logísticos similares, aplicaciones web y backend han demostrado eficacia en la optimización de recursos, adaptándose a cambios dinámicos como cancelaciones o reprogramaciones \cite{macias2021}.
+
+La evolución de estos sistemas ha sido impulsada por la necesidad de manejar datasets crecientes y restricciones multifactoriales. Estudios comparativos muestran que algoritmos heurísticos, como backtracking o programación lineal, son comunes para resolver el problema de asignación de horarios, que es NP-completo en su forma general \cite{torres2020}. Además, la integración con datos en tiempo real, como actualizaciones de disponibilidad, requiere arquitecturas capaces de procesar eventos asíncronos, lo que ha llevado a la adopción de patrones de mensajería y APIs eficientes.
+
+\subsection{Arquitecturas de Software: Monolito vs Microservicios}
+Cuando la escala de un sistema de gestión de horarios crece—ya sea por el número de usuarios, la complejidad de los datos o la frecuencia de actualizaciones—La arquitectura subyacente se vuelve crítica. Historicamente, muchos sistemas educativos comenzaron como monolitos, donde toda la lógica de aplicación reside en una sola unidad desplegable. Sin embargo, experiencias documentadas, como la migración de sistemas de transporte público a microservicios, demuestran que dividir la aplicación en servicios pequeños e independientes mejora la escalabilidad horizontal, reduce tiempos de respuesta y facilita el mantenimiento \cite{torres2020}. En un monolito, cambios en una parte del sistema pueden afectar al conjunto, mientras que en microservicios, cada servicio puede evolucionar de forma autónoma, permitiendo despliegues selectivos y recuperación de fallos granular.
+
+En el contexto de SGH, se adopta un enfoque híbrido: un monolito modular en Spring Boot que simula microservicios lógicamente separados, permitiendo una futura transición sin refactorizaciones masivas. Esta decisión equilibra simplicidad en el desarrollo inicial con potencial de escalabilidad, alineándose con prácticas recomendadas para proyectos académicos de mediana escala \cite{torres2020}.
+
+\subsection{Tecnologías Frontend: Next.js y Tailwind CSS}
+El frontend web juega un rol pivotal en la usabilidad de sistemas como SGH, donde interfaces intuitivas son clave para administradores y profesores. Next.js, un framework basado en React, se destaca por su capacidad para renderizado del lado del servidor (SSR) y generación de sitios estáticos (SSG), lo que optimiza el rendimiento, mejora el SEO y reduce tiempos de carga iniciales. Comparativas entre frameworks JavaScript muestran que Next.js ofrece una curva de aprendizaje accesible para equipos familiarizados con React, con una comunidad robusta que acelera el desarrollo \cite{lazuardy2022}. En proyectos similares, Next.js ha sido utilizado para construir dashboards administrativos con navegación fluida y componentes reutilizables, demostrando su idoneidad para aplicaciones de gestión educativa.
+
+Complementando Next.js, Tailwind CSS proporciona un sistema de estilos utilitarios que permite diseños responsivos y modernos sin escribir CSS personalizado. Esta aproximación reduce el tiempo de desarrollo, mejora la consistencia visual y facilita la adaptación a dispositivos móviles. Experiencias en desarrollo web con Tailwind destacan su eficacia en la creación de interfaces limpias y accesibles, con soporte para temas oscuros y animaciones sutiles \cite{somi2021}. En el caso de SGH, la combinación de Next.js y Tailwind permite una interfaz web que responde rápidamente a interacciones del usuario, visualizando horarios en formatos como calendarios y tablas dinámicas.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\columnwidth]{graphics/uno.png}
+\caption{Modern Front End Web Architectures with React.Js and Next.Js.}
+\label{fig:lazuardy}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\columnwidth]{graphics/dos.png}
+\caption{User Interface Development of a Modern Web Application.}
+\label{fig:somi}
+\end{figure}
+
+\subsection{Tecnologías Backend y Comunicación: Spring Boot y APIs REST}
+En el backend, Spring Boot emerge como una opción madura para desarrollar servicios robustos y escalables. Su integración con JPA para persistencia de datos, Spring Security para autenticación, y soporte nativo para APIs REST lo hace ideal para sistemas como SGH, donde la lógica de negocio incluye algoritmos de optimización y manejo de entidades complejas. Spring Boot facilita la configuración de microservicios modulares, con controladores para endpoints REST, servicios para lógica de negocio y repositorios para acceso a datos, promoviendo una arquitectura limpia y mantenible.
+
+La comunicación entre frontend y backend se basa en APIs REST, un protocolo estandarizado sobre HTTP que permite operaciones CRUD sobre recursos. Este enfoque desacopla clientes y servidores, facilitando evoluciones independientes y escalabilidad. En proyectos con React Native y Next.js, las APIs REST han probado su viabilidad para aplicaciones móviles y web, con baja sobrecarga y soporte para autenticación JWT y cifrado \cite{amodeo2013, macias2021}. En SGH, las APIs REST manejan solicitudes de creación, lectura, actualización y eliminación de cursos, profesores y horarios, asegurando interoperabilidad y facilidad de integración con futuros módulos.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\columnwidth]{graphics/tres.png}
+\caption{Principios de diseño de APIs REST.}
+\label{fig:amodeo}
+\end{figure}
+
+\subsection{Tecnologías Móviles: React Native}
+Para acceso multiplataforma, React Native permite desarrollar aplicaciones móviles nativas usando JavaScript, compartiendo lógica con el frontend web. Estudios comparativos entre frameworks móviles, como Flutter y React Native, destacan la superioridad de este último en términos de comunidad y facilidad de integración con ecosistemas React \cite{macias2021}. En SGH, React Native se utiliza para una app móvil que consume las mismas APIs REST, ofreciendo funcionalidades como visualización de horarios y notificaciones, optimizada inicialmente para Android con potencial de extensión a iOS.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\columnwidth]{graphics/cuatro.png}
+\caption{Estudio comparativo de los frameworks del desarrollo móvil.}
+\label{fig:macias}
+\end{figure}
+
+\subsection{Seguridad y Privacidad en Sistemas Educativos}
+La seguridad es un pilar fundamental en sistemas que manejan datos sensibles como información personal de estudiantes y profesores. Una autenticación coherente entre plataformas web y móvil, utilizando JWT para tokens seguros, es esencial; diseños unificados para React y React Native incluyen registro, login, recuperación de credenciales y manejo de tokens JWT \cite{ye2022}. Además, se recomienda control de acceso basado en roles, cifrado de comunicaciones vía HTTPS y cumplimiento de regulaciones como GDPR o leyes locales de protección de datos.
+
+Más allá de lo técnico, principios de privacidad por diseño son cruciales en entornos educativos, donde el manejo ético de datos previene abusos. Aprendiendo de aplicaciones de rastreo de contactos, que incorporan enfoques de privacidad reforzada con consentimiento explícito y minimización de datos \cite{react2021}, SGH implementa medidas para asegurar que la gestión de horarios no comprometa la privacidad, como encriptación de datos en reposo y auditorías regulares.

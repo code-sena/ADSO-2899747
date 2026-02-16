@@ -1,0 +1,24 @@
+\section{Métodos}
+A continuación, se detalla el proceso de diseño e implementación del proyecto SGH, incluyendo las herramientas utilizadas, la arquitectura seleccionada, las metodologías de desarrollo y las pruebas realizadas. Se adoptó un enfoque pragmático, priorizando la simplicidad y la mantenibilidad, con un ciclo de desarrollo incremental que permitió iteraciones rápidas y ajustes basados en feedback.
+
+\subsection{Enfoque de desarrollo}
+La gestión del proyecto siguió una metodología ágil inspirada en Scrum, adaptada al alcance académico y al equipo reducido. No se conformaron roles formales ni un equipo amplio, pero se dividieron las tareas en iteraciones semanales (sprints) de corta duración. Al inicio, se definieron requerimientos funcionales claros: registro y gestión de cursos, profesores, asignaturas y aulas; generación automática de horarios basada en algoritmos de optimización; visualización y edición de horarios en interfaces web y móvil; gestión de disponibilidad de profesores; y exportación de horarios en formatos como PDF o Excel. Los requerimientos no funcionales incluyeron tiempos de respuesta inferiores a 2 segundos para operaciones críticas, escalabilidad para hasta 1000 usuarios concurrentes, seguridad de datos con autenticación robusta, y usabilidad accesible.
+
+Con los requerimientos establecidos, se diseñó la arquitectura del sistema optando por microservicios, como se discutió en el marco teórico. En la práctica, esto implicó modularizar la aplicación en servicios independientes comunicados por APIs REST. Dado el alcance reducido, se implementó un ``monolito modular'' en Spring Boot, donde los servicios están lógicamente separados pero desplegados juntos, permitiendo una futura migración a microservicios distribuidos sin refactorizaciones masivas. Esta decisión equilibró simplicidad inicial con potencial de escalabilidad.
+
+El desarrollo concreto siguió estos pasos detallados:
+1. Diseño de componentes y arquitectura: Se definieron los componentes principales (frontend web, backend, móvil) y sus interacciones. Se modelaron recursos REST para entidades como cursos, profesores y horarios, siguiendo convenciones CRUD. Se diseñaron algoritmos de generación de horarios basados en backtracking y heurísticas, integrados en el servicio de backend.
+2. Configuración del entorno de desarrollo: Se preparó la infraestructura: instalación de Node.js para Next.js, JDK para Spring Boot, Expo para React Native, y bases de datos MySQL para desarrollo (con opción a PostgreSQL en producción). Se configuró Docker para contenedorización y despliegue local.
+3. Desarrollo del backend (Spring Boot): Se estructuraron controladores REST (e.g., CourseController, ScheduleController) con endpoints para operaciones CRUD. Se implementaron servicios para lógica de negocio, como generación de horarios y validación de conflictos. Se integró Spring Security con JWT para autenticación, y JPA para mapeo objeto-relacional. Se añadieron validaciones y manejo de errores.
+4. Desarrollo de la aplicación web (Next.js + Tailwind CSS): Se inició el proyecto con Next.js, configurando Tailwind CSS para estilos. Se crearon páginas para dashboard (/dashboard), gestión de cursos (/dashboard/course), profesores (/dashboard/professor), horarios (/dashboard/schedule), etc. Se implementaron componentes reutilizables (e.g., HeaderCourse, TableCourse) con Tailwind para layouts responsivos. Se consumieron APIs REST usando fetch o Axios, con manejo de estado via React hooks.
+5. Desarrollo de la aplicación móvil (React Native): Se creó la app con Expo, reutilizando servicios API del backend. Se diseñaron pantallas para login, visualización de horarios y gestión básica, con navegación via React Navigation. Actualmente optimizada para Android, configuración de Expo.
+6. Ajustes de rendimiento y seguridad: Se midieron tiempos de respuesta, optimizando consultas de base de datos y caching. Se implementó CORS, validación de inputs y logging para auditoría.
+
+En síntesis, se siguió un ciclo incremental con tecnologías integradas: lenguajes JavaScript/TypeScript y Java; frameworks Next.js, React Native y Spring Boot; estilos Tailwind CSS; base de datos MySQL; APIs REST; y herramientas como Docker y Git. Se priorizó código limpio, documentación y principios SOLID.
+
+\subsection{Orden real de desarrollo y actividades principales}
+• Inicio con backend y APIs: Se priorizó el backend para definir contratos REST, stubs para integración.
+• Desarrollo paralelo de frontend web y móvil: Una vez APIs listas, se avanzó en Next.js y React Native simultáneamente.
+• Integración y refinamiento: Se conectaron componentes, ajustando UI/UX basado en pruebas.
+• Pruebas exhaustivas: Unitarias, integración y de usuario para validar funcionalidad.
+Tecnologías clave: Java/Spring Boot para backend, Next.js/Tailwind para web, React Native para móvil, MySQL para datos, Docker para despliegue.
